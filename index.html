@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<style type="text/css" src="http://stats.seandolinar.com/wp-content/themes/twentyfourteen/style.css?ver=4.4.2"></style>
+<style>
+    .container {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Titillium Web, Lato, sans-serif;
+    }
+    .new-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    
+    <div class="container"></div>
+    
+    <script type="text/javascript">
+    
+        //creates the blue block
+        d3.selectAll('.container')
+            .append('div')
+            .attr('class', 'new-block')
+            .style('width', '300px')
+            .style('height', '100px')
+            .style('background-color', '#0066cc')
+            .style('color', 'white')
+            .style('cursor', 'pointer')
+            .text('Blue block')
+            
+        d3.selectAll('.new-block').on('click', function() {
+            //turns block to orange
+            d3.select(this)
+                .style('background-color', '#FF9821')
+        })
+        
+        d3.selectAll('.new-block').on('dblclick', function() {
+            
+            d3.select(this)
+                .remove()
+        })
+            
+    </script>
+</body>
+</html>
