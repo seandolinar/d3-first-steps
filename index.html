@@ -20,6 +20,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 </style>
 
@@ -31,6 +33,16 @@
     
         //creates the blue block
         d3.selectAll('.container')
+            .append('div')
+            .attr('class', 'new-block')
+            .style('width', '300px')
+            .style('height', '100px')
+            .style('background-color', '#0066cc')
+            .style('color', 'white')
+            .style('cursor', 'pointer')
+            .text('Blue block')
+            
+       d3.selectAll('.container')
             .append('div')
             .attr('class', 'new-block')
             .style('width', '300px')
